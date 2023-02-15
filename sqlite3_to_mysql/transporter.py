@@ -282,7 +282,7 @@ class SQLite3toMySQL:
                 return self._mysql_string_type
             match = self._valid_column_type(self._mysql_string_type)
             return match.group(0).upper() + length
-        if data_type in {"DOUBLE PRECISION", "REAL"}:
+        if data_type in {"DOUBLE PRECISION", "REAL", "FLOAT"}:
             return "DOUBLE"
         if data_type == "UNSIGNED BIG INT":
             return "BIGINT" + self._column_type_length(column_type) + " UNSIGNED"
